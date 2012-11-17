@@ -6,11 +6,22 @@ function calculate() {
 
 	var customerType = document.getElementById('type').value;
 	
+	
 	//repeat the above for the discout percent
 	//removed as we will now calculate discount rather than grab user input
 	//var discountPercent = document.getElementById('discount_percent').valueAsNumber;
 
-	//calculate discount percentage
+	// call calculate discount percent function
+	var discountPercent = discPercCalc(listPrice, customerType);
+	
+	// call calculate discount amount function
+	var discount = discAmountCalc(listPrice, discountPercent);
+	
+	// call calculate discount price function
+	var discountPrice = discPriceCalc(listPrice, discount);	
+
+/*	
+ 	//calculate discount percentage
 	if (customerType == 'R') {
 		if (listPrice < 100){
 			discountPercent = 0;
@@ -26,10 +37,11 @@ function calculate() {
 			discountPercent = 30;
 		}	
 	}
+
 	// calculate discount amount and discount price
 	var discount = listPrice * (discountPercent * 0.01);
-	var discountPrice = listPrice - discount;
-
+	var discountPrice = listPrice - discount;	
+*/	
 	// set output in currency format (sort of)
 	document.getElementById('discount_percent').valueAsNumber = discountPercent;
 	
@@ -43,3 +55,38 @@ function calculate() {
 	document.getElementById('discount_price').value = discountPrice;
 	
 } //end calculate
+
+
+// calculate discount percent function
+	function discPercCalc(listPrice, customerType) {
+	 
+		var discPercent;
+		
+		if (customerType == 'R') {
+			if (listPrice < 100){
+				discPercent = 0;
+			}else if (listPrice >= 100 && listPrice < 250) {
+					discPercent = 10;
+			}	else if (listPrice >= 250) { 
+					discPercent = 25;			
+			}
+		} else if (customerType == 'C') {
+			if (listPrice < 250){
+				discPercent = 20;
+			}else {
+				discPercent = 30;
+			}	
+		}
+		discPercent = parseFloat(discPercent);
+		return discPercent;
+	}
+// calculate discount amount function
+	function discAmountCalc(listPrice, discountPercent) {
+		var discAmount = listPrice * (discountPercent * 0.01);
+		return discAmount;			
+	}
+// calculate discount price function
+	function discPriceCalc(listPrice, discount) {
+		var discPrice = listPrice - discount;
+		return discPrice;
+	}
