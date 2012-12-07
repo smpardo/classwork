@@ -111,7 +111,12 @@
 				<div id="data">
 					<label>Product Description:</label> <input type="text" id="product_description" /><br /> 
 					<label>List Price:</label> <input type="number" id="list_price" /><br /> 
-					<label>Discount Percent:</label> <input type="number" id="discount_percent" />%<br />
+					<label>Customer Type:</label><br /> 
+						<select name="type" id="type">
+						<option value="R">Retail</option>
+						<option value="C">Commercial</option>
+						</select><br>
+					<label>Discount Percent:</label> <input type="number" id="discount_percent" disabled/>%<br />
 				</div>
 				<div id="buttons">
 					<label>&nbsp;</label> 
@@ -126,6 +131,10 @@
 					<output id="discount_price" for="list_price discount"></output><br>				
 				</div>
 				
+				<!-- today's date -->
+				<br />
+				<script>getToday ();</script>
+				<noscript>You must enable JavaScript for this application.</noscript>
 			</form>
 			<!-- Content Ends Here -->
 		</section>

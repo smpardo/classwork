@@ -27,6 +27,28 @@
 			}		
 		</style>
 
+		<!-- JavaScript Version -->
+		<script>
+		
+		//Create Function to get Left Image on MouseOver
+		function doMouseOver() {
+			var img = document.getElementById('image2');
+			img.src = "images/evilHomer_L.gif";
+			img.width = 127;
+			img.height = 212;
+		}
+		
+		//Create Function to get Right Image on MouseOut		
+		function doMouseOut() {
+			var img = document.getElementById('image2');
+			img.src = "images/evilHomer_R.gif";
+			img.width = 127;
+			img.height = 212;
+		}		
+		
+		</script>
+
+
 	</head>
 
 <body>
@@ -146,7 +168,15 @@
 		<br>
 
 		<!-- JavaScript Version -->
-
+		<div id ="two">
+			<h2> Homer Dancing at Last Year's Party using JavaScript</h2>
+			
+			<img src="images/evilHomer_L.gif" id="image2" 
+			width="127" height="212" alt="Dancing Homer2" 
+			onmouseover="doMouseOver();"
+		 	onmouseout="doMouseOut();" />
+		</div>
+		<br />
 
 		<!-- JQuery Version -->
 
