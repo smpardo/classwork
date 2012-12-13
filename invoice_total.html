@@ -8,6 +8,10 @@
 		<link rel="shortcut icon" href="images/homer.ico" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/nav.css" />
+		
+		<script src="js/jquery-1.8.0.js"></script>
+		<script src="js/jquery.formatCurrency-1.4.0.min.js"></script>
+		
 		<script src="js/calculator.js"></script>
 	</head>
 
@@ -111,16 +115,11 @@
 				<div id="data">
 					<label>Product Description:</label> <input type="text" id="product_description" /><br /> 
 					<label>List Price:</label> <input type="number" id="list_price" /><br /> 
-					<label>Customer Type:</label><br /> 
-						<select name="type" id="type">
-						<option value="R">Retail</option>
-						<option value="C">Commercial</option>
-						</select><br>
-					<label>Discount Percent:</label> <input type="number" id="discount_percent" disabled/>%<br />
+					<label>Discount Percent:</label> <input type="number" id="discount_percent" />%<br />
 				</div>
 				<div id="buttons">
 					<label>&nbsp;</label> 
-					<input type="button" value="Calculate Discount" onclick="calculate();"/><br />
+					<input type="button" value="Calculate Discount" id="calculate"/><br />
 				</div>
 				
 				<!-- Output for JavaScript -->
@@ -131,10 +130,6 @@
 					<output id="discount_price" for="list_price discount"></output><br>				
 				</div>
 				
-				<!-- today's date -->
-				<br />
-				<script>getToday ();</script>
-				<noscript>You must enable JavaScript for this application.</noscript>
 			</form>
 			<!-- Content Ends Here -->
 		</section>
