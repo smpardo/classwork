@@ -29,6 +29,97 @@
 				border: 1px solid gray;
 			}
 		
+			/* ADD CSS FOR ROTATING CUBE*/
+			/* Move Front forward */
+			#face1 { 
+			-webkit-transform: translateZ(180px); 
+			}
+			
+			/* Create Right by turning to right and moving forward */
+			#face2 { 
+			-webkit-transform: rotateY(90deg) translateZ(180px);                 
+			}
+			
+			/* Create Top by turning to right, then up and moving forward */
+			# face3 { 
+			-webkit-transform: rotateY(90deg) rotateX(90deg) 
+			   translateZ(180px);  
+			}
+
+			/* Create Back by turning around and clockwise, and moving forward */
+			#face4 { 
+			-webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(180px); 
+			}
+			
+			/* Create Left by turning left and clockwise and moving forward */	
+			#face5 { 
+			-webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(180px); 
+			}
+			
+			/* Create Bottom by turning down and moving forward */  	  	
+			#face6 { 
+			-webkit-transform: rotateX(-90deg) translateZ(180px);                
+			}
+		
+			/* Set up rotation rule */
+			@-webkit-keyframes spincube {
+				16%      { 
+				   -webkit-transform: rotateY(-90deg);                
+				}
+				33%      { 
+				   -webkit-transform: rotateY(-90deg) rotateZ(90deg); 
+				]
+				50%      { 
+				   -webkit-transform: rotateY(180deg) rotateZ(90deg); 
+				}
+				66%      { 
+				   -webkit-transform: rotateY(90deg) rotateX(90deg);  
+				}
+				83%      { 
+				    -webkit-transform: rotateX(90deg);                 
+				}
+			}
+		
+			/* Define rotation attributes */
+			#spinner {
+			    -webkit-animation-name: spincube;
+			    -webkit-animation-timing-function: ease-in-out;
+			    -webkit-animation-iteration-count: infinite;
+			    -webkit-animation-duration: 12s;
+			    -webkit-transform-style: preserve-3d;
+			    -webkit-transform-origin: 180px 180px 0px; 
+			}
+		
+			/* Album Covers */ 
+			div #spinner div   { 
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
+			
+			div #face1   (
+				background-image: url('images/movie_soundtrack.jpg');
+			}
+			
+			div #face2 { 
+				background-image: url('images/testify.jpg');
+			}
+			  
+			div #face3 { 
+				background-image: url('images/songs_in_the_key_of_springfield.jpg');
+			}
+		
+			div #face4 { 
+				background-image: url('images/the_yellow_album.png');
+			}
+			  	
+			div #face5 { 
+				background-image: url('images/sing_the_blues.gif');
+			}
+			  
+			div #face6 { 
+				background-image: url('images/go_simpsonic.jpg');
+			}
+	
 		</style>
 	</head>
 

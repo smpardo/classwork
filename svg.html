@@ -11,6 +11,15 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/nav.css" />
 
+		<style>
+			svg	{
+				border: 1px solid black;
+				background: url('images/ninja_dodgeball.jpg') center top 
+       			no-repeat;
+			}
+		</style>
+
+
 	</head>
 
 <body>
@@ -120,14 +129,19 @@
 		</header>
 
 		<!-- Content Starts Here -->
+		<h2> Homer at Ninja Dodgeball Fest II in SVG</h2>
 
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="450" viewBox="0 0 600 450">
 
-
-
-
-
-
-
+			<!-- Drawing elements goes here -->
+			<circle cx="50%" cy="20" r="5%" fill="red">
+				<animate attributeName="cx" dur="3" values="5%;95%;5%" repeatCount="indefinite" />
+				<animate attributeName="cy" dur="2s" values="5%;95%;5%" keyTimes="0;0.5; 1" calcMode="spline" keySplines="1 0 0 1; 0 0 1 1" repeatCount="indefinite" />
+		 	</circle>
+			<image xlink:href='images/homer_dodgeball2.png' width="167" height="300">
+				<animateMotion path="M 110,200 C 300,130 400,350 450,150 500,-50 -90,270 110,200 Z" dur="5s" repeatCount="indefinite" rotate="auto" />
+			</image>
+		</svg>
 
 		<!-- Content Ends Here-->
 
